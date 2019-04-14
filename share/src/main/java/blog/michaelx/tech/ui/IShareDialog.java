@@ -1,4 +1,4 @@
-package blog.michaelx.tech;
+package blog.michaelx.tech.ui;
 
 import blog.michaelx.tech.callback.OnShareClickListener;
 

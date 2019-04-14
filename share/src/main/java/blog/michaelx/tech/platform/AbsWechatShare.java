@@ -14,7 +14,7 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 import blog.michaelx.tech.ShareConstants;
 import blog.michaelx.tech.callback.OnShareResultCallback;
-import blog.michaelx.tech.type.IShareContentType;
+import blog.michaelx.tech.type.IShareContent;
 import blog.michaelx.tech.utils.CheckAppInstalledUtil;
 import blog.michaelx.tech.wxapi.WXEntryActivity;
 
@@ -25,14 +25,14 @@ import blog.michaelx.tech.wxapi.WXEntryActivity;
  * @date 2018/10/25
  *
  */
-public abstract class AbsWechatShare implements ISharePlatform<SendMessageToWX.Req, IShareContentType> {
+abstract class AbsWechatShare implements ISharePlatform<SendMessageToWX.Req, IShareContent> {
 
     private OnShareResultCallback mShareResultCallback;
-    private IShareContentType mShareContentType;
+    private IShareContent mShareContentType;
 
     @Override
     public void share(Activity activity, OnShareResultCallback callback,
-                      IShareContentType contentTyp, SendMessageToWX.Req req) {
+                      IShareContent contentTyp, SendMessageToWX.Req req) {
         if (req == null) {
             return;
         }

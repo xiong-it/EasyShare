@@ -5,7 +5,7 @@ import blog.michaelx.tech.ShareConstants;
 /**
  * 分享到朋友圈
  */
-public class WechatMomentsShare extends AbsWechatShare {
+class WechatMomentsShare extends AbsWechatShare {
 
     // 朋友圈最大标题长度
     public static final int MAX_TITLE_LENGTH = 30;

@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import blog.michaelx.tech.IShareDialog;
+import blog.michaelx.tech.type.ShareContentFactory;
+import blog.michaelx.tech.ui.IShareDialog;
 import blog.michaelx.tech.callback.OnShareClickListener;
 import blog.michaelx.tech.callback.OnShareResultCallback;
 import blog.michaelx.tech.model.BitmapShareModel;
 import blog.michaelx.tech.platform.ISharePlatform;
-import blog.michaelx.tech.type.BitmapShare;
-import blog.michaelx.tech.type.IShareContentType;
+import blog.michaelx.tech.type.IShareContent;
 
 public class DemoActivity extends AppCompatActivity {
 
@@ -61,7 +61,7 @@ public class DemoActivity extends AppCompatActivity {
         };
 
         // 2. 实例化分享数据类型
-        IShareContentType bitmapShare = new BitmapShare(platform, model);
+        IShareContent bitmapShare = ShareContentFactory.newShareContent(platform, model);
 
         // 3. 将对应数据分享出去
         bitmapShare.share(this, new OnShareResultCallback() {

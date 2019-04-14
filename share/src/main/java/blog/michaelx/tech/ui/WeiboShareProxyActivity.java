@@ -1,4 +1,4 @@
-package blog.michaelx.tech;
+package blog.michaelx.tech.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import com.sina.weibo.sdk.share.WbShareHandler;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 
+import blog.michaelx.tech.ShareConstants;
 import blog.michaelx.tech.callback.OnShareResultCallback;
 import blog.michaelx.tech.platform.ISharePlatform;
 import blog.michaelx.tech.platform.WeiboShare;

@@ -12,12 +12,9 @@ public class ShareConstants {
     public static final int PLAT_FORM_TENCHENT_QQ = 3; // qq
 
     // 定义分享数据类型
-    public static final int FEED_DETAIL_TYPE = 0; // feed详情
     public static final int FEED_TYPE = 1; // feed
-    public static final int PERSONAL_INFO_TYPE = 2; // 个人信息
-    public static final int PERSONAL_NAME_CARD = 3; // 名片
-    public static final int PICTURE_TYPE = 4; // 图片分享
-    public static final int BITMAP_TYPE = 5; // 位图分享
+    public static final int PICTURE_TYPE = 2; // 图片分享
+    public static final int BITMAP_TYPE = 3; // 位图分享
 
 
     // TODO 修改为自己的id和key 清单中也需要修改

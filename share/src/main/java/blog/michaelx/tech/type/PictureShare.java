@@ -13,7 +13,7 @@ import blog.michaelx.tech.platform.ISharePlatform;
  * @date 2018/11/12
  *
  */
-public class PictureShare extends AbsShareContentType<PictureShareModel> {
+class PictureShare extends AbsShareContentType<PictureShareModel> {
 
     public PictureShare(ISharePlatform share, PictureShareModel shareModel) {
         super(share, shareModel);

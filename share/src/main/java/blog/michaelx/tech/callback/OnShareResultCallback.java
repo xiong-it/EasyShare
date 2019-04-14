@@ -1,7 +1,7 @@
 package blog.michaelx.tech.callback;
 
 import blog.michaelx.tech.platform.ISharePlatform;
-import blog.michaelx.tech.type.IShareContentType;
+import blog.michaelx.tech.type.IShareContent;
 
 /**
  * 分享结果回调
@@ -15,7 +15,7 @@ public interface OnShareResultCallback {
      * @see blog.michaelx.tech.ShareConstants#PLAT_FORM_WECHAT etc.
      * @see blog.michaelx.tech.ShareConstants#BITMAP_TYPE etc.
      */
-    void onShareCancel(ISharePlatform platform, IShareContentType type);
+    void onShareCancel(ISharePlatform platform, IShareContent type);
 
     /**
      * 分享失败
@@ -27,7 +27,7 @@ public interface OnShareResultCallback {
      * @see blog.michaelx.tech.ShareConstants#PLAT_FORM_WECHAT etc.
      * @see blog.michaelx.tech.ShareConstants#BITMAP_TYPE etc.
      */
-    void onShareFailed(ISharePlatform platform, IShareContentType type, int errCode, String errMsg);
+    void onShareFailed(ISharePlatform platform, IShareContent type, int errCode, String errMsg);
 
     /**
      * 分享成功
@@ -37,5 +37,5 @@ public interface OnShareResultCallback {
      * @see blog.michaelx.tech.ShareConstants#PLAT_FORM_WECHAT etc.
      * @see blog.michaelx.tech.ShareConstants#BITMAP_TYPE etc.
      */
-    void onShareSuccess(ISharePlatform platform, IShareContentType type);
+    void onShareSuccess(ISharePlatform platform, IShareContent type);
 }

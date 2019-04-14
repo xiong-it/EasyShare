@@ -15,7 +15,7 @@ import blog.michaelx.tech.platform.ISharePlatform;
 /**
  * 分享内容抽象基类
  */
-public abstract class AbsShareContentType<Model extends IShareModel> implements IShareContentType<AbsPlatformDataFactory> {
+public abstract class AbsShareContentType<Model extends IShareModel> implements IShareContent<AbsPlatformDataFactory> {
     protected ISharePlatform mSharePlatform;
     private Object shareData;
 

@@ -4,7 +4,7 @@ import android.app.Activity;
 
 import blog.michaelx.tech.ShareConstants;
 import blog.michaelx.tech.callback.OnShareResultCallback;
-import blog.michaelx.tech.type.IShareContentType;
+import blog.michaelx.tech.type.IShareContent;
 
 /**
  * 分享平台抽象接口
@@ -13,7 +13,7 @@ import blog.michaelx.tech.type.IShareContentType;
  *                           比如QQ对应Bundle
  * @param <ShareContentType> 分享数据类型
  */
-public interface ISharePlatform<Data, ShareContentType extends IShareContentType> {
+public interface ISharePlatform<Data, ShareContentType extends IShareContent> {
     int ERR_CODE_WX_NOT_INSTALL = -100;
     String ERR_MSG_WX_NOT_INSTALL = "微信未安装或者版本过低";
 

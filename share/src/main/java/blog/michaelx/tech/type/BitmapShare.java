@@ -14,7 +14,7 @@ import blog.michaelx.tech.platform.ISharePlatform;
 /**
  * 位图分享（到微信）
  */
-public class BitmapShare implements IShareContentType<BitmapDataFactory> {
+class BitmapShare implements IShareContent<BitmapDataFactory> {
     protected ISharePlatform mSharePlatform;
     private SendMessageToWX.Req shareData;
 

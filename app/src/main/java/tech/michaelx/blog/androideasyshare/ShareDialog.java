@@ -5,12 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.widget.Toast;
 
-import blog.michaelx.tech.IShareDialog;
-import blog.michaelx.tech.callback.OnShareClickListener;
-import blog.michaelx.tech.platform.TenchentQQShare;
-import blog.michaelx.tech.platform.WechatMomentsShare;
-import blog.michaelx.tech.platform.WechatShare;
-import blog.michaelx.tech.platform.WeiboShare;
+import blog.michaelx.tech.ui.AbsShareDialog;
+import blog.michaelx.tech.ui.IShareDialog;
 
 /**
  * 分享选择弹窗
@@ -19,9 +15,8 @@ import blog.michaelx.tech.platform.WeiboShare;
  * @version 1.0
  * @since 2019/4/3
  */
-public class ShareDialog extends AlertDialog implements IShareDialog {
+public class ShareDialog extends AbsShareDialog implements IShareDialog {
     private static final String[] SHARE_ITEMS = {"微信", "朋友圈", "QQ", "微博"};
-    private OnShareClickListener listener;
 
     public ShareDialog(Context context) {
         super(context);
@@ -62,38 +57,36 @@ public class ShareDialog extends AlertDialog implements IShareDialog {
     /**
      * 点击了微信
      */
-    public void onClickWechat() {
+    @Override
+    protected void onClickWechat() {
         Toast.makeText(getContext(), "分享至微信好友", Toast.LENGTH_LONG).show();
-        listener.onShareClick(new WechatShare());
+        super.onClickWechat();
     }
 
     /**
      * 点击了朋友圈
      */
-    public void onClickWechatMoments() {
+    @Override
+    protected void onClickWechatMoments() {
         Toast.makeText(getContext(), "分享至微信朋友圈", Toast.LENGTH_LONG).show();
-        listener.onShareClick(new WechatMomentsShare());
+        super.onClickWechatMoments();
     }
 
     /**
      * 点击了QQ分享
      */
-    public void onClickQQ() {
+    @Override
+    protected void onClickQQ() {
         Toast.makeText(getContext(), "分享至QQ朋友", Toast.LENGTH_LONG).show();
-        listener.onShareClick(new TenchentQQShare());
+        super.onClickQQ();
     }
 
     /**
      * 点击了微博分享
      */
-    public void onClickWeibo() {
-        Toast.makeText(getContext(), "分享至微博", Toast.LENGTH_LONG).show();
-        listener.onShareClick(new WeiboShare());
-    }
-
     @Override
-    public <T extends IShareDialog> T setOnShareClickListener(OnShareClickListener listener) {
-        this.listener = listener;
-        return (T) this;
+    protected void onClickWeibo() {
+        Toast.makeText(getContext(), "分享至微博", Toast.LENGTH_LONG).show();
+        super.onClickWeibo();
     }
 }

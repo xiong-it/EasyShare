@@ -14,7 +14,7 @@ import blog.michaelx.tech.type.AbsShareContentType;
 /**
  * 分享到qq
  */
-public class TenchentQQShare implements ISharePlatform<Bundle, AbsShareContentType> {
+class TenchentQQShare implements ISharePlatform<Bundle, AbsShareContentType> {
 
     private OnShareResultCallback mShareResultCallback;
     private AbsShareContentType mShareContentType;

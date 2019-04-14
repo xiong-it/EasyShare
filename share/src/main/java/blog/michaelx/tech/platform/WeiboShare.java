@@ -5,12 +5,16 @@ import android.app.Activity;
 import com.sina.weibo.sdk.api.WeiboMultiMessage;
 
 import blog.michaelx.tech.ShareConstants;
-import blog.michaelx.tech.WeiboShareProxyActivity;
 import blog.michaelx.tech.callback.OnShareResultCallback;
 import blog.michaelx.tech.type.AbsShareContentType;
+import blog.michaelx.tech.ui.WeiboShareProxyActivity;
 
 /**
  * 分享到微博
+ * <p>
+ *     ISharePlatform实现类本来无需公开，只需要被SharePlatformFactory使用，但是：
+ *     fixme：由于WeiboShare需要被外部包中的WeiboShareProxyActivity引用，所有只好使用public修饰了。
+ * </p>
  */
 public class WeiboShare implements ISharePlatform<WeiboMultiMessage, AbsShareContentType> {
     private OnShareResultCallback mResultCallback;
