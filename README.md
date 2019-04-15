@@ -2,7 +2,7 @@
 一个Android社会化分享脚手架，集成微信，qq，微博分享。
 
 # 作用 
-这是个Android社会化分享脚手架，利用抽象工厂，模板方法封装的一个简单易定制的分享组件，不能代替ShareSDK等商业化SDK使用，仅供开发交流探讨，不建议线上项目直接使用。  
+这是个Android社会化分享脚手架，利用抽象工厂，桥接模式封装的一个简单易定制的分享组件，不能代替ShareSDK等商业化SDK使用，仅供开发交流探讨，不建议线上项目直接使用。  
 
 # 结构 
 ![](https://raw.githubusercontent.com/xiong-it/EasyShare/master/EasyShare_Struct.png)  
