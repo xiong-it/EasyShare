@@ -2,7 +2,7 @@
 一个Android社会化分享脚手架，集成微信，qq，微博分享。
 
 # 作用 
-利用抽象工厂，桥接模式搭配Java泛型封装的一个简单易扩展的分享组件，无法代替ShareSDK等商业化SDK使用，仅供开发交流探讨，不建议线上项目直接使用，可供开发者参考扩展。   
+利用抽象工厂，工厂方法，桥接模式搭配Java泛型封装的一个简单易扩展的分享组件，无法代替ShareSDK等商业化SDK使用，仅供开发交流探讨，不建议线上项目直接使用，可供开发者参考扩展。   
 
 # 架构
 ![](https://raw.githubusercontent.com/xiong-it/EasyShare/master/EasyShare_UML.png)  
@@ -24,6 +24,39 @@
 # 集成步骤
  1. clone该仓库  
  2. 参考DemoActivity  
+  
+# 分享代码举例  
+以位图分享举例（场景：二维码图片分享）
+```
+// 1. 分享数据Model组装
+IShareModel model = new BitmapShareModel() {
+    @Override
+    public Bitmap shareBitmap() {
+            return getShareBitmap();
+    }
+};
+
+// 2. 实例化分享数据类型
+IShareContent bitmapShare = ShareContentFactory.newShareContent(platform, model);
+
+// 3. 将对应数据分享出去
+bitmapShare.share(this.activity, new OnShareResultCallback() {
+    @Override
+    public void onShareCancel(ISharePlatform platform, IShareContent type) {
+        // 分享取消
+    }
+
+    @Override
+    public void onShareFailed(ISharePlatform platform, IShareContent type, int errCode, String errMsg) {
+        // 分享失败
+    }
+
+    @Override
+    public void onShareSuccess(ISharePlatform platform, IShareContent type) {
+        // 分享成功
+     }
+});
+```  
   
 # 当你需要新增分享类型
  1. 扩展IShareModel接口，新增实现类  
