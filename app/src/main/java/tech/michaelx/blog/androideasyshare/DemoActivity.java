@@ -66,17 +66,17 @@ public class DemoActivity extends AppCompatActivity {
         // 3. 将对应数据分享出去
         bitmapShare.share(this, new OnShareResultCallback() {
             @Override
-            public void onShareCancel(ISharePlatform platform, IShareContentType type) {
+            public void onShareCancel(ISharePlatform platform, IShareContent type) {
                 // 分享取消
             }
 
             @Override
-            public void onShareFailed(ISharePlatform platform, IShareContentType type, int errCode, String errMsg) {
+            public void onShareFailed(ISharePlatform platform, IShareContent type, int errCode, String errMsg) {
                 // 分享失败
             }
 
             @Override
-            public void onShareSuccess(ISharePlatform platform, IShareContentType type) {
+            public void onShareSuccess(ISharePlatform platform, IShareContent type) {
                 // 分享成功
             }
         });
